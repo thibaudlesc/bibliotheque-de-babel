@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bibliothèque de Babel — Europe & Russie</title>
+  <meta name="description" content="Jeu de plateau pédagogique multijoueur sur les cultures d'Europe et de Russie." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ================== ÉCRAN ACCUEIL ================== -->
+  <section class="screen screen-home active" id="screen-home">
+    <div class="bg-gradient"></div>
+    <div class="floating-shapes" aria-hidden="true">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+    </div>
+    <div class="home-inner">
+      <div class="logo-circle">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bibliothèque de Babel">
+          <circle cx="50" cy="50" r="48" fill="#F4EFE7" />
+          <path d="M19 28C13 31 12 60 17 71c4 3 16 1 27-5 11-6 12-17 5-27-7-10-21-12-30-11z" fill="#0A0A0A"/>
+          <path d="M59 17c4-1 16 2 19 12 2 9-1 18-4 22-3 3-7 1-9-3-2-7-3-17-3-24 0-3-1-6-3-7z" fill="#0A0A0A"/>
+          <path d="M33 81c11 0 28-2 38-5 5-2 8-7 13-15 0 18-9 28-23 32-9 2-19 0-28-3-1-1-2-4 0-4 1-2 0-5 0-5z" fill="#0A0A0A"/>
+        </svg>
+      </div>
+      <h1 class="home-title">Bibliothèque<br/><span>de Babel</span></h1>
+      <p class="home-subtitle">Europe &amp; Russie — Le jeu pédagogique multijoueur</p>
+
+      <div class="home-actions">
+        <button class="btn btn-primary" id="btn-create-room">Créer une partie</button>
+        <button class="btn btn-secondary" id="btn-join-room">Rejoindre une partie</button>
+        <button class="btn btn-ghost" id="btn-rules">Règles du jeu</button>
+      </div>
+
+      <div class="player-input-wrap">
+        <label for="player-name">Ton pseudo</label>
+        <input type="text" id="player-name" maxlength="16" placeholder="Joueur 1" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== ÉCRAN RÈGLES ================== -->
+  <section class="screen screen-rules" id="screen-rules">
+    <div class="rules-card">
+      <h2>Règles du jeu</h2>
+      <div class="rules-content">
+        <div class="rule-block">
+          <h3>But du jeu</h3>
+          <p>Arriver à la destination finale avec le maximum de points de savoir. Une fois le premier joueur arrivé, on termine le tour pour les autres. Le gagnant n'est pas le premier arrivé mais celui qui a le plus de points de savoir.</p>
+        </div>
+        <div class="rule-block">
+          <h3>Mise en place</h3>
+          <p>Le créateur de la partie ouvre une salle, partage le code (ou le QR code) avec les autres joueurs (2 à 6). Chaque joueur saisit son pseudo, choisit automatiquement un pion-pièce de monnaie distinct, puis l'hôte lance la partie.</p>
+        </div>
+        <div class="rule-block">
+          <h3>Matériel virtuel</h3>
+          <ul>
+            <li>1 plateau de jeu (Europe &amp; Russie)</li>
+            <li>1 dé numérique à <strong>4 faces</strong> (1-4)</li>
+            <li>Jusqu'à 6 pions-pièces (Euro, Yen, Won, Dollar, Bitcoin, Rouble)</li>
+            <li>Cartes Quiz par catégorie, en mode Facile (1 pt) ou Difficile (3 pts)</li>
+            <li>Cartes Chance — bonus à conserver en main, malus appliqués immédiatement</li>
+          </ul>
+        </div>
+        <div class="rule-block">
+          <h3>Catégories de cases</h3>
+          <div class="categories-grid">
+            <span class="cat-pill" style="--c:#D72B26">Pouvoir</span>
+            <span class="cat-pill" style="--c:#F472B6">Culture</span>
+            <span class="cat-pill" style="--c:#F6BB4F">Savoir</span>
+            <span class="cat-pill" style="--c:#10A977">Espace</span>
+            <span class="cat-pill" style="--c:#7DD3FC">Histoire</span>
+            <span class="cat-pill" style="--c:#7659FF">Difficile</span>
+            <span class="cat-pill" style="--c:#FF8A1E">Chance</span>
+          </div>
+        </div>
+        <div class="rule-block">
+          <h3>Déroulement d'un tour</h3>
+          <ol>
+            <li>Lance le dé (1 à 4).</li>
+            <li>Ton pion avance automatiquement du nombre indiqué.</li>
+            <li>Selon la case sur laquelle tu tombes :
+              <ul>
+                <li><strong>Catégorie quiz</strong> : tu réponds à une question. Bonne réponse = points de savoir.</li>
+                <li><strong>Carte Chance</strong> : si c'est un bonus, tu peux la garder en main pour plus tard ou l'utiliser tout de suite. Si c'est un malus, il s'applique immédiatement.</li>
+                <li><strong>+2 cases / -2 cases</strong> : déplacement bonus ou malus de 2 cases.</li>
+                <li><strong>Rejoue</strong> : tu relances le dé sans passer la main.</li>
+                <li><strong>Musée</strong> : +1 point de savoir.</li>
+              </ul>
+            </li>
+            <li>Le tour passe automatiquement au joueur suivant.</li>
+          </ol>
+        </div>
+        <div class="rule-block">
+          <h3>Cartes en main</h3>
+          <p>Les cartes Chance bonus que tu choisis de garder s'empilent dans ta main (panneau latéral « Mes cartes »). Tu peux en jouer une à tout moment, même hors de ton tour, pour obtenir un effet immédiat (points, déplacement, vol de points...).</p>
+        </div>
+        <div class="rule-block">
+          <h3>Fin de partie</h3>
+          <p>Dès qu'un joueur atteint la dernière case, on finit le tour pour que tout le monde ait joué le même nombre de fois. Le classement final s'affiche en fonction des points de savoir cumulés.</p>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="btn-rules-back">Retour</button>
+    </div>
+  </section>
+
+  <!-- ================== ÉCRAN LOBBY ================== -->
+  <section class="screen screen-lobby" id="screen-lobby">
+    <div class="lobby-card">
+      <h2>Salle d'attente</h2>
+      <div class="room-code-block">
+        <span class="room-code-label">Code de la salle</span>
+        <div class="room-code" id="room-code">------</div>
+        <div class="room-code-actions">
+          <button class="btn btn-tiny" id="btn-copy-code">Copier le code</button>
+          <button class="btn btn-tiny" id="btn-copy-link">Copier le lien</button>
+        </div>
+      </div>
+      <div class="qr-block" id="qr-block">
+        <div class="qr-canvas" id="qr-canvas" aria-label="QR code de la salle"></div>
+        <p class="qr-hint">Scanne pour rejoindre directement la partie</p>
+      </div>
+      <div class="players-list" id="players-list">
+        <!-- Players injectés dynamiquement -->
+      </div>
+      <p class="lobby-hint" id="lobby-hint">En attente d'autres joueurs… (2 joueurs minimum)</p>
+      <div class="lobby-actions">
+        <button class="btn btn-primary" id="btn-start-game" disabled>Lancer la partie</button>
+        <button class="btn btn-ghost" id="btn-leave-lobby">Quitter</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== ÉCRAN JOIN ================== -->
+  <section class="screen screen-join" id="screen-join">
+    <div class="join-card">
+      <h2>Rejoindre une partie</h2>
+      <input type="text" id="join-code" maxlength="6" placeholder="ABCD12" autocomplete="off" />
+      <button class="btn btn-primary" id="btn-join-confirm">Rejoindre</button>
+      <button class="btn btn-ghost" id="btn-join-back">Retour</button>
+      <p class="error-msg" id="join-error"></p>
+    </div>
+  </section>
+
+  <!-- ================== ÉCRAN JEU ================== -->
+  <section class="screen screen-game" id="screen-game">
+    <header class="game-header">
+      <div class="game-logo">
+        <div class="logo-mini">
+          <svg viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <circle cx="50" cy="50" r="48" fill="#F4EFE7" />
+            <path d="M19 28C13 31 12 60 17 71c4 3 16 1 27-5 11-6 12-17 5-27-7-10-21-12-30-11z" fill="#0A0A0A"/>
+            <path d="M59 17c4-1 16 2 19 12 2 9-1 18-4 22-3 3-7 1-9-3-2-7-3-17-3-24 0-3-1-6-3-7z" fill="#0A0A0A"/>
+            <path d="M33 81c11 0 28-2 38-5 5-2 8-7 13-15 0 18-9 28-23 32-9 2-19 0-28-3-1-1-2-4 0-4 1-2 0-5 0-5z" fill="#0A0A0A"/>
+          </svg>
+        </div>
+        <span>Bibliothèque de Babel</span>
+      </div>
+      <div class="game-room-code">Salle : <span id="game-room-code">----</span></div>
+      <button class="btn btn-tiny btn-ghost" id="btn-quit-game">Quitter</button>
+    </header>
+
+    <div class="game-layout">
+      <!-- Sidebar: joueurs + scores -->
+      <aside class="game-sidebar">
+        <h3>Joueurs</h3>
+        <div class="game-players" id="game-players"></div>
+
+        <div class="turn-indicator" id="turn-indicator">
+          <span class="turn-label">Au tour de</span>
+          <strong id="current-player-name">—</strong>
+        </div>
+
+        <div class="dice-area">
+          <div class="dice" id="dice" aria-label="Dé">
+            <div class="dice-cube">
+              <div class="dice-face face-1"><span class="dot dot-c"></span></div>
+              <div class="dice-face face-2"><span class="dot dot-tl"></span><span class="dot dot-br"></span></div>
+              <div class="dice-face face-3"><span class="dot dot-tl"></span><span class="dot dot-c"></span><span class="dot dot-br"></span></div>
+              <div class="dice-face face-4"><span class="dot dot-tl"></span><span class="dot dot-tr"></span><span class="dot dot-bl"></span><span class="dot dot-br"></span></div>
+              <div class="dice-face face-5"><span class="dot dot-tl"></span><span class="dot dot-tr"></span><span class="dot dot-c"></span><span class="dot dot-bl"></span><span class="dot dot-br"></span></div>
+              <div class="dice-face face-6"><span class="dot dot-tl"></span><span class="dot dot-tr"></span><span class="dot dot-ml"></span><span class="dot dot-mr"></span><span class="dot dot-bl"></span><span class="dot dot-br"></span></div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block" id="btn-roll-dice">Lancer le dé</button>
+        </div>
+
+        <div class="game-hand">
+          <h4>Mes cartes</h4>
+          <div class="hand-cards" id="hand-cards"></div>
+        </div>
+
+        <div class="game-log" id="game-log">
+          <h4>Journal</h4>
+          <ul id="log-entries"></ul>
+        </div>
+      </aside>
+
+      <!-- Plateau principal -->
+      <main class="game-board-wrap">
+        <svg id="board-svg" viewBox="0 0 1416 1000" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+          <!-- Plateau injecté dynamiquement par JS -->
+        </svg>
+        <button class="btn-board-view" id="btn-toggle-view" type="button">Zoomer sur moi</button>
+        <div class="board-overlay" id="board-overlay" aria-hidden="true"></div>
+      </main>
+    </div>
+
+    <!-- Modal carte (Quiz/Chance) -->
+    <div class="card-modal" id="card-modal">
+      <div class="card-modal-bg"></div>
+      <div class="game-card" id="game-card">
+        <!-- Carte injectée dynamiquement -->
+      </div>
+    </div>
+
+    <!-- Modal fin de partie -->
+    <div class="end-modal" id="end-modal">
+      <div class="end-modal-bg"></div>
+      <div class="end-modal-content">
+        <h2>Partie terminée</h2>
+        <ol class="ranking" id="ranking"></ol>
+        <button class="btn btn-primary" id="btn-end-home">Retour à l'accueil</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================== TOAST NOTIFICATIONS ================== -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- QR code generator (lobby share) -->
+  <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+  <!-- Firebase + JS du jeu -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

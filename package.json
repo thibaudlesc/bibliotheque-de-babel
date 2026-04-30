@@ -1,0 +1,13 @@
+{
+  "name": "bibliotheque-de-babel",
+  "version": "1.0.0",
+  "description": "Jeu de plateau pédagogique multijoueur — Europe & Russie",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve . -l 5173",
+    "deploy:firebase": "firebase deploy",
+    "deploy:rules": "firebase deploy --only firestore:rules",
+    "deploy:hosting": "firebase deploy --only hosting"
+  },
+  "private": true
+}

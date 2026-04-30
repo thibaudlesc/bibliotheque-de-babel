@@ -1,0 +1,18 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Salles de jeu : accès limité aux joueurs authentifiés (anonymement).
+    // Pas de données sensibles : on autorise lecture/écriture pour tout
+    // utilisateur authentifié, ce qui est suffisant pour un jeu pédagogique.
+    match /rooms/{code} {
+      allow read:   if request.auth != null;
+      allow create: if request.auth != null
+                    && request.resource.data.hostUid == request.auth.uid;
+      allow update: if request.auth != null;
+      allow delete: if request.auth != null
+                    && resource.data.hostUid == request.auth.uid;
+    }
+  }
+}
